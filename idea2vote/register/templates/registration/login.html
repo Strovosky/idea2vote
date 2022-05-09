@@ -1,0 +1,19 @@
+{% extends "main/index.html" %}
+
+{% block title %}Sign In{% endblock %}
+
+{% block content %}
+<h3>
+    Idea2Vote
+    <small class="text-muted">Sign In</small>
+</h3>
+<p></p>
+<form method="post">
+    {% csrf_token %}
+    {{form}}
+    <p></p>
+    <p>Don't have an account, create one <a href="/register/">here</a>.</p>
+    <p></p>
+    <button type="submit" name="btn_signin">Sign In</button>
+</form>
+{% endblock %}

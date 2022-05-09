@@ -1,0 +1,17 @@
+{% extends "main/index.html" %}
+
+{% block title %}Propose{% endblock %}
+
+{% block content %}
+<h3>
+    Idea2Vote
+    <small class="text-muted">Propose</small>
+</h3>
+<p></p>
+<form method="post">
+    {% csrf_token %}
+    {{form}}
+    <button type="submit" name="btn_submit" value="pressed" >Submit</button>
+</form>
+
+{% endblock %}
