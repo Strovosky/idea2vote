@@ -1,0 +1,25 @@
+{% extends "main/index.html" %}
+
+{% block title %}Vote{% endblock %}
+
+{% block content %}
+<h3>
+    Idea2Vote
+    <small class="text-muted">Vote</small>
+</h3>
+<p></p>
+<h6>Vote for the proposals you like:</h6>
+<p></p>
+<p></p>
+<form method="post" action="/vote-success/">
+    {% csrf_token %}
+    {% for candidate in all_candidates %}
+        {% for proposal in candidate.proposals.all %}
+            <input type="checkbox" name="cb{{proposal.id}}" value="checked"> {{proposal.text}}
+            <p></p>
+        {% endfor %}
+    {% endfor %}
+    <button type="submit" name="btn_vote" value="pressed">Vote</button>
+</form>
+{% endblock %}
+
