@@ -11,7 +11,7 @@
 <h6>Vote for the proposals you like:</h6>
 <p></p>
 <p></p>
-<form method="post" action="/vote-success/">
+<form method="post" action="#">
     {% csrf_token %}
     {% for candidate in all_candidates %}
         {% for proposal in candidate.proposals.all %}

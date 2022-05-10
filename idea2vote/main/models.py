@@ -11,3 +11,9 @@ class Proposals(Model):
 
     def __str__(self) -> str:
         return self.text
+
+# This table will tell how many votes each candidate has.
+class Position(Model):
+    user = ForeignKey(to=User, on_delete=CASCADE, related_name="position", null=True)
+    total_votes = IntegerField()
+
