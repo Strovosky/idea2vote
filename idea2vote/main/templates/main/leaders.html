@@ -1,0 +1,24 @@
+{% extends "main/index.html" %}
+
+{% block title %}Leaders{% endblock %}
+
+{% block content %}
+
+<h3>
+    Idea2Vote
+    <small class="text-muted">Leading Candidates</small>
+</h3>
+<p></p>
+<h5>Here are the 3 leading candidates with their number of votes:</h5>
+<p></p>
+{% for candidate in leaders %}
+    {% for name in candidate.keys %}
+        {% for total_votes in candidate.values %}
+    <h4>{{name}} has {{total_votes}} votes.</h4>
+        {% endfor %}
+    {% endfor %}
+    <p></p>
+{% endfor %}
+
+{% endblock %}
+]

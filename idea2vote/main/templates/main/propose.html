@@ -8,10 +8,19 @@
     <small class="text-muted">Propose</small>
 </h3>
 <p></p>
-<form method="post">
+<h5>My Proposals:</h5>
+<p></p>
+<ol>{% for proposal in user.proposals.all %}
+    <li><p>{{proposal.text}}</p></li>
+{% endfor %}
+</ol>
+<form method="post" action="#">
     {% csrf_token %}
-    {{form}}
-    <button type="submit" name="btn_submit" value="pressed" >Submit</button>
+    <p>Type in the new proposal you want to add:</p>
+    <input type="text" name="create_proposal"> <button type="submit" name="btn_new_proposal" value="pressed" >New Proposal</button>
+    <p></p>
+    <p>Type in the number of the proposal you want to delete:</p>
+    <input type="text" name="delete_proposal"> <button type="submit" name="btn_delete" value="pressed" >Delete Proposal</button>
 </form>
 
 {% endblock %}
