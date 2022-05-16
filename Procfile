@@ -1,1 +1,1 @@
-web: gunicorn idea2vote.wsgi:app
+web: gunicorn idea2vote.idea2vote.wsgi
