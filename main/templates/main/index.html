@@ -42,10 +42,13 @@
             <a href="/">Home</a>
             <a href="/vote/">Vote</a>
             <a href="/leaders/">Leading Candidates</a>
-            <a href="/login/">Sign In</a>
             <a href="/propose/">Propose</a>
-            <a href="/logout/">Sign Out</a>
+            {% if user.username|length == 0 %}
+            <a href="/login/">Sign In</a>
             <a href="/register/">Sign Up</a>
+            {% else %}
+            <a href="/logout/">Sign Out</a>
+            {% endif %}
         </div>
         <div id="content" name="content" class="main">
             <div class="p-3 mb-2 bg-info text-dark">
